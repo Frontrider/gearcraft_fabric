@@ -1,0 +1,17 @@
+{
+  "id": "gearcraft",
+  "name": "Gearcraft",
+  "version": "1.0.0",
+  "side": "universal",
+  "initializer": "hu.frontrider.gearcraft.Gearcraft",
+  "languageAdapter": "net.fabricmc.language.kotlin.KotlinLanguageAdapter",
+  "mixins": {
+    "client": "gearcraft.client.json",
+    "common": "gearcraft.common.json"
+  },
+  "dependencies": {
+  "net.fabricmc.language.kotlin": {
+    "version": ">=1.3.10-9"
+  }
+}
+}

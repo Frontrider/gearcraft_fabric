@@ -1,0 +1,48 @@
+def resourceDir = "generatedResources/"
+def resourceBuildDir = "build/resourceSource/"
+
+mkdir(file(resourceDir))
+mkdir(file(resourceBuildDir))
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/resources", resourceBuildDir
+        }
+    }
+}
+
+def variants = [[name:"stone",main:"stone",secondary:"cobblestone",material:"stone"],
+                [name:"andesite",main:"andesite",secondary:"cobblestone",material:"stone"],
+                [name:"granite",main:"granite",secondary:"cobblestone",material:"stone"],
+                [name:"diorite",main:"diorite",secondary:"cobblestone",material:"stone"],
+        
+                [name:"birch",main:"birch_planks",secondary:"cobblestone",material:"wooden"],
+                [name:"oak",main:"oak_planks",secondary:"cobblestone",material:"wooden"],        
+                [name:"dark_oak",main:"dark_oak_planks",secondary:"cobblestone",material:"wooden"],
+                [name:"spruce",main:"spruce_planks",secondary:"cobblestone",material:"wooden"],
+                [name:"jungle",main:"jungle_planks",secondary:"cobblestone",material:"wooden"]
+]
+
+task generateResources(type: Copy) {
+    doFirst{
+        delete(resourceBuildDir)
+    }
+    variants.forEach{ name->
+        from (resourceDir) {
+            include '**/*.json'
+            filter {
+                it.replace('@main@', name.main)
+                        .replace('@secondary@', name.secondary)
+                        .replace("@name@", "$name.name")
+            }
+            rename { String fileName ->
+                fileName.replace("@replace@", "$name.name")
+            }
+        }   
+    }
+    
+    into resourceBuildDir
+    
+}
+

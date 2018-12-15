@@ -1,0 +1,8 @@
+{
+  "type": "gearcraft:simple_grinding",
+  "input": {
+    "tag": "gearcraft:stone"
+  },
+  "result": "gearcraft:stone_dust",
+  "power": 1
+}
