@@ -36,6 +36,20 @@ object Gearcraft : ModInitializer {
             registerItemBlock(BlockDismantler(FabricBlockSettings.of(Material.STONE).build(), 4), "${it}_dismantler")
         }
 
+        arrayOf("black","blue","brown","cyan","gray","green","light_blue","light_gray","lime","magenta","red","orange","pink","white","yellow").forEach {
+            registerItemBlock(ShaftBlock(FabricBlockSettings.of(Material.METAL).build(), 16), "${it}_iron_shaft")
+            registerItemBlock(GearboxBlock(FabricBlockSettings.of(Material.METAL).build(), 16), "${it}_iron_gearbox")
+            registerItemBlock(BlockBreaker(FabricBlockSettings.of(Material.METAL).build(), 6), "${it}_iron_breaker")
+            registerItemBlock(BlockDismantler(FabricBlockSettings.of(Material.METAL).build(), 6), "${it}_iron_dismantler")
+        }
+
+        Registry.ITEM.register(Identifier(MODID, "wooden_gear"), Item(Item.Settings().itemGroup(ItemGroup.MATERIALS)))
+        Registry.ITEM.register(Identifier(MODID, "stone_gear"), Item(Item.Settings().itemGroup(ItemGroup.MATERIALS)))
+        Registry.ITEM.register(Identifier(MODID, "iron_gear"), Item(Item.Settings().itemGroup(ItemGroup.MATERIALS)))
+        Registry.ITEM.register(Identifier(MODID, "gold_gear"), Item(Item.Settings().itemGroup(ItemGroup.MATERIALS)))
+        Registry.ITEM.register(Identifier(MODID, "diamond_gear"), Item(Item.Settings().itemGroup(ItemGroup.MATERIALS)))
+        Registry.ITEM.register(Identifier(MODID, "obsidian_gear"), Item(Item.Settings().itemGroup(ItemGroup.MATERIALS)))
+
         Registry.ITEM.register(Identifier(MODID, "stone_dust"), Item(Item.Settings().itemGroup(ItemGroup.MATERIALS)))
 
         RecipeSerializers.register(GrindingRecipe.Serialiser())

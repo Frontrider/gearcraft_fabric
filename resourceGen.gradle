@@ -12,37 +12,55 @@ sourceSets {
     }
 }
 
-def variants = [[name:"stone",main:"stone",secondary:"cobblestone",material:"stone"],
-                [name:"andesite",main:"andesite",secondary:"cobblestone",material:"stone"],
-                [name:"granite",main:"granite",secondary:"cobblestone",material:"stone"],
-                [name:"diorite",main:"diorite",secondary:"cobblestone",material:"stone"],
-        
-                [name:"birch",main:"birch_planks",secondary:"cobblestone",material:"wooden"],
-                [name:"oak",main:"oak_planks",secondary:"cobblestone",material:"wooden"],        
-                [name:"dark_oak",main:"dark_oak_planks",secondary:"cobblestone",material:"wooden"],
-                [name:"spruce",main:"spruce_planks",secondary:"cobblestone",material:"wooden"],
-                [name:"jungle",main:"jungle_planks",secondary:"cobblestone",material:"wooden"]
-]
+def variants = [[name: "stone", main: "stone", secondary: "cobblestone", material: "stone", power: 8],
+                [name: "andesite", main: "andesite", secondary: "cobblestone", material: "stone", power: 8],
+                [name: "granite", main: "granite", secondary: "cobblestone", material: "stone", power: 8],
+                [name: "diorite", main: "diorite", secondary: "cobblestone", material: "stone", power: 8],
 
+                [name: "birch", main: "birch_planks", secondary: "cobblestone", material: "wooden", power: 4],
+                [name: "oak", main: "oak_planks", secondary: "cobblestone", material: "wooden", power: 4],
+                [name: "dark_oak", main: "dark_oak_planks", secondary: "cobblestone", material: "wooden", power: 4],
+                [name: "spruce", main: "spruce_planks", secondary: "cobblestone", material: "wooden", power: 4],
+                [name: "jungle", main: "jungle_planks", secondary: "cobblestone", material: "wooden", power: 4],
+
+                [name: "red_iron", secondary: "iron_block", main: "red_concrete", material: "iron", power: 16],
+                [name: "black_iron", secondary: "iron_block", main: "black_concrete", material: "iron", power: 16],
+                [name: "blue_iron", secondary: "iron_block", main: "blue_concrete", material: "iron", power: 16],
+                [name: "black_iron", secondary: "iron_block", main: "black_concrete", material: "iron", power: 16],
+                [name: "brown_iron", secondary: "iron_block", main: "brown_concrete", material: "iron", power: 16],
+                [name: "cyan_iron", secondary: "iron_block", main: "cyan_concrete", material: "iron", power: 16],
+                [name: "gray_iron", secondary: "iron_block", main: "gray_concrete", material: "iron", power: 16],
+                [name: "green_iron", secondary: "iron_block", main: "green_concrete", material: "iron", power: 16],
+                [name: "light_blue_iron", secondary: "iron_block", main: "light_blue_concrete", material: "iron", power: 16],
+                [name: "light_gray_iron", secondary: "iron_block", main: "light_gray_concrete", material: "iron", power: 16],
+                [name: "lime_iron", secondary: "iron_block", main: "lime_concrete", material: "iron", power: 16],
+                [name: "magenta_iron", secondary: "iron_block", main: "magenta_concrete", material: "iron", power: 16],
+                [name: "orange_iron", secondary: "iron_block", main: "orange_concrete", material: "iron", power: 16],
+                [name: "pink_iron", secondary: "iron_block", main: "pink_concrete", material: "iron", power: 16],
+                [name: "white_iron", secondary: "iron_block", main: "white_concrete", material: "iron", power: 16],
+                [name: "yellow_iron", secondary: "iron_block", main: "yellow_concrete", material: "iron", power: 16],
+]
 task generateResources(type: Copy) {
-    doFirst{
+    doFirst {
         delete(resourceBuildDir)
     }
-    variants.forEach{ name->
-        from (resourceDir) {
+    variants.forEach { name ->
+        from(resourceDir) {
             include '**/*.json'
+            exclude "excluded/**"
             filter {
                 it.replace('@main@', name.main)
                         .replace('@secondary@', name.secondary)
+                        .replace("@replace@", "$name.name")
                         .replace("@name@", "$name.name")
             }
             rename { String fileName ->
                 fileName.replace("@replace@", "$name.name")
             }
-        }   
+        }
     }
-    
+
     into resourceBuildDir
-    
 }
 
+jar.dependsOn generateResources

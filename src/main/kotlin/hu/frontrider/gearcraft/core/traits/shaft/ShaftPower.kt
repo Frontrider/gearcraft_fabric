@@ -23,7 +23,4 @@ class ShaftPower(val power:Int,val powerState:IntegerProperty): ITransmission {
     override fun isSideSupported(world: World?, blockPos: BlockPos?, blockState: BlockState, side: Direction): Boolean {
         return side.axis == blockState.get(AXIS_XYZ)
     }
-
-
-
 }
