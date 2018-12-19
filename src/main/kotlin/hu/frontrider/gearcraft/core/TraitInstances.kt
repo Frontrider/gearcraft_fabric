@@ -11,4 +11,6 @@ object TraitInstances {
     val facingState = FacingBlock()
     val axisTrait = AxisTrait()
     val waterLoggedTrait = WaterLoggedTrait()
+
+
 }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up":   { "model": "gearcraft:block/@replace@_breaker","x":-90,"uvlock":true },
+    "facing=down":     { "model": "gearcraft:block/@replace@_breaker","x":90,"uvlock":true},
+    "facing=south":  { "model": "gearcraft:block/@replace@_breaker","x":180,"uvlock":true},
+    "facing=north":  { "model": "gearcraft:block/@replace@_breaker","uvlock":true},
+    "facing=west":   { "model": "gearcraft:block/@replace@_breaker","y":-90,"uvlock":true},
+    "facing=east":   { "model": "gearcraft:block/@replace@_breaker","y":90,"uvlock":true}
+  }
+}

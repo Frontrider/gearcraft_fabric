@@ -1,0 +1,9 @@
+{
+  "parent": "gearcraft:block/shaft",
+  "textures": {
+    "particle": "minecraft:block/@main@",
+    "body": "minecraft:block/@main@",
+    "casing":"minecraft:block/@secondary@",
+    "animated": "gearcraft:block/shaft_bit_2"
+  }
+}

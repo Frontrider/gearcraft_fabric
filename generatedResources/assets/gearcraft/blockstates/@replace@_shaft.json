@@ -1,0 +1,42 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "axis": "y"
+      },
+      "apply": {
+        "model": "gearcraft:block/@replace@_shaft",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "z"
+      },
+      "apply": {
+        "model": "gearcraft:block/@replace@_shaft",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "x"
+      },
+      "apply": {
+        "model": "gearcraft:block/@replace@_shaft",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when":{
+        "power":0,
+        "apply": {
+          "model": "gearcraft:block/shaft_bit_0"
+        }
+      }
+    }
+  ]
+}

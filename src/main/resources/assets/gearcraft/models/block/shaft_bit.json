@@ -1,0 +1,22 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+    "animated": "gearcraft:block/shaft_bit_still"
+  },
+  "elements": [
+    {
+      "name": "base",
+      "from": [7, 7, 7],
+      "to": [9, 9, 9],
+      "faces": {
+        "north": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#animated"},
+        "east": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#animated"},
+        "south": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#animated"},
+        "west": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#animated"},
+        "up": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#animated"},
+        "down": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#animated"}
+      }
+    }
+  ]
+}

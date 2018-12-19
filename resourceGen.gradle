@@ -12,34 +12,149 @@ sourceSets {
     }
 }
 
-def variants = [[name: "stone", main: "stone", secondary: "cobblestone", material: "stone", power: 8],
-                [name: "andesite", main: "andesite", secondary: "cobblestone", material: "stone", power: 8],
-                [name: "granite", main: "granite", secondary: "cobblestone", material: "stone", power: 8],
-                [name: "diorite", main: "diorite", secondary: "cobblestone", material: "stone", power: 8],
+def variants = [
+        [name: "stone", main: "stone", secondary: "cobblestone", material: "stone", power: 8],
+        [name: "andesite", main: "andesite", secondary: "cobblestone", material: "stone", power: 8],
+        [name: "granite", main: "granite", secondary: "cobblestone", material: "stone", power: 8],
+        [name: "diorite", main: "diorite", secondary: "cobblestone", material: "stone", power: 8],
 
-                [name: "birch", main: "birch_planks", secondary: "cobblestone", material: "wooden", power: 4],
-                [name: "oak", main: "oak_planks", secondary: "cobblestone", material: "wooden", power: 4],
-                [name: "dark_oak", main: "dark_oak_planks", secondary: "cobblestone", material: "wooden", power: 4],
-                [name: "spruce", main: "spruce_planks", secondary: "cobblestone", material: "wooden", power: 4],
-                [name: "jungle", main: "jungle_planks", secondary: "cobblestone", material: "wooden", power: 4],
+        [name: "birch", main: "birch_planks", secondary: "cobblestone", material: "wooden", power: 4],
+        [name: "oak", main: "oak_planks", secondary: "cobblestone", material: "wooden", power: 4],
+        [name: "dark_oak", main: "dark_oak_planks", secondary: "cobblestone", material: "wooden", power: 4],
+        [name: "spruce", main: "spruce_planks", secondary: "cobblestone", material: "wooden", power: 4],
+        [name: "jungle", main: "jungle_planks", secondary: "cobblestone", material: "wooden", power: 4],
 
-                [name: "red_iron", secondary: "iron_block", main: "red_concrete", material: "iron", power: 16],
-                [name: "black_iron", secondary: "iron_block", main: "black_concrete", material: "iron", power: 16],
-                [name: "blue_iron", secondary: "iron_block", main: "blue_concrete", material: "iron", power: 16],
-                [name: "black_iron", secondary: "iron_block", main: "black_concrete", material: "iron", power: 16],
-                [name: "brown_iron", secondary: "iron_block", main: "brown_concrete", material: "iron", power: 16],
-                [name: "cyan_iron", secondary: "iron_block", main: "cyan_concrete", material: "iron", power: 16],
-                [name: "gray_iron", secondary: "iron_block", main: "gray_concrete", material: "iron", power: 16],
-                [name: "green_iron", secondary: "iron_block", main: "green_concrete", material: "iron", power: 16],
-                [name: "light_blue_iron", secondary: "iron_block", main: "light_blue_concrete", material: "iron", power: 16],
-                [name: "light_gray_iron", secondary: "iron_block", main: "light_gray_concrete", material: "iron", power: 16],
-                [name: "lime_iron", secondary: "iron_block", main: "lime_concrete", material: "iron", power: 16],
-                [name: "magenta_iron", secondary: "iron_block", main: "magenta_concrete", material: "iron", power: 16],
-                [name: "orange_iron", secondary: "iron_block", main: "orange_concrete", material: "iron", power: 16],
-                [name: "pink_iron", secondary: "iron_block", main: "pink_concrete", material: "iron", power: 16],
-                [name: "white_iron", secondary: "iron_block", main: "white_concrete", material: "iron", power: 16],
-                [name: "yellow_iron", secondary: "iron_block", main: "yellow_concrete", material: "iron", power: 16],
+        [name: "red_iron", secondary: "iron_block", main: "red_concrete", material: "iron", power: 16],
+        [name: "black_iron", secondary: "iron_block", main: "black_concrete", material: "iron", power: 16],
+        [name: "blue_iron", secondary: "iron_block", main: "blue_concrete", material: "iron", power: 16],
+        [name: "black_iron", secondary: "iron_block", main: "black_concrete", material: "iron", power: 16],
+        [name: "brown_iron", secondary: "iron_block", main: "brown_concrete", material: "iron", power: 16],
+        [name: "cyan_iron", secondary: "iron_block", main: "cyan_concrete", material: "iron", power: 16],
+        [name: "gray_iron", secondary: "iron_block", main: "gray_concrete", material: "iron", power: 16],
+        [name: "green_iron", secondary: "iron_block", main: "green_concrete", material: "iron", power: 16],
+        [name: "light_blue_iron", secondary: "iron_block", main: "light_blue_concrete", material: "iron", power: 16],
+        [name: "light_gray_iron", secondary: "iron_block", main: "light_gray_concrete", material: "iron", power: 16],
+        [name: "lime_iron", secondary: "iron_block", main: "lime_concrete", material: "iron", power: 16],
+        [name: "magenta_iron", secondary: "iron_block", main: "magenta_concrete", material: "iron", power: 16],
+        [name: "orange_iron", secondary: "iron_block", main: "orange_concrete", material: "iron", power: 16],
+        [name: "pink_iron", secondary: "iron_block", main: "pink_concrete", material: "iron", power: 16],
+        [name: "white_iron", secondary: "iron_block", main: "white_concrete", material: "iron", power: 16],
+        [name: "yellow_iron", secondary: "iron_block", main: "yellow_concrete", material: "iron", power: 16],
+
+        [name: "red_gold", secondary: "gold_block", main: "red_concrete", material: "gold", power: 6],
+        [name: "black_gold", secondary: "gold_block", main: "black_concrete", material: "gold", power: 6],
+        [name: "blue_gold", secondary: "gold_block", main: "blue_concrete", material: "gold", power: 6],
+        [name: "black_gold", secondary: "gold_block", main: "black_concrete", material: "gold", power: 6],
+        [name: "brown_gold", secondary: "gold_block", main: "brown_concrete", material: "gold", power: 6],
+        [name: "cyan_gold", secondary: "gold_block", main: "cyan_concrete", material: "gold", power: 6],
+        [name: "gray_gold", secondary: "gold_block", main: "gray_concrete", material: "gold", power: 6],
+        [name: "green_gold", secondary: "gold_block", main: "green_concrete", material: "gold", power: 6],
+        [name: "light_blue_gold", secondary: "gold_block", main: "light_blue_concrete", material: "gold", power: 6],
+        [name: "light_gray_gold", secondary: "gold_block", main: "light_gray_concrete", material: "iron", power: 6],
+        [name: "lime_gold", secondary: "gold_block", main: "lime_concrete", material: "gold", power: 6],
+        [name: "magenta_gold", secondary: "gold_block", main: "magenta_concrete", material: "gold", power: 6],
+        [name: "orange_gold", secondary: "gold_block", main: "orange_concrete", material: "gold", power: 6],
+        [name: "pink_gold", secondary: "gold_block", main: "pink_concrete", material: "gold", power: 6],
+        [name: "white_gold", secondary: "gold_block", main: "white_concrete", material: "gold", power: 6],
+        [name: "yellow_gold", secondary: "gold_block", main: "yellow_concrete", material: "gold", power: 6],
 ]
+task generateDynamicResources() {
+
+    doFirst {
+        def targetFolder = file(resourceBuildDir + "/assets/gearcraft/blockstates")
+
+        variants.forEach({ material ->
+            def resource = "{\n" +
+                    "  \"multipart\": [\n" +
+                    "    {\n" +
+                    "      \"when\": {\n" +
+                    "        \"axis\": \"y\"\n" +
+                    "      },\n" +
+                    "      \"apply\": {\n" +
+                    "        \"model\": \"gearcraft:block/${material.name}_shaft\",\n" +
+                    "        \"uvlock\": true\n" +
+                    "      }\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"when\": {\n" +
+                    "        \"axis\": \"z\"\n" +
+                    "      },\n" +
+                    "      \"apply\": {\n" +
+                    "        \"model\": \"gearcraft:block/${material.name}_shaft\",\n" +
+                    "        \"x\": 90,\n" +
+                    "        \"uvlock\": true\n" +
+                    "      }\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"when\": {\n" +
+                    "        \"axis\": \"x\"\n" +
+                    "      },\n" +
+                    "      \"apply\": {\n" +
+                    "        \"model\": \"gearcraft:block/${material.name}_shaft\",\n" +
+                    "        \"x\": 90,\n" +
+                    "        \"y\": 90,\n" +
+                    "        \"uvlock\": true\n" +
+                    "      }\n" +
+                    "    },\n"
+            for (def i = 0; i < material.power; i++) {
+                resource+= "    {\n" +
+                        "      \"when\":{\n" +
+                        "        \"power\":$i,\n" +
+                        "        \"apply\": {\n" +
+                        "          \"model\": \"gearcraft:block/shaft_bit_$i\"\n" +
+                        "        }\n" +
+                        "      }\n" +
+                        "    },\n"
+            }
+
+            resource = resource[0..resource.length() - 3]
+            resource += "  ]\n" +
+                    "}"
+
+            def targetFile = file(targetFolder.absolutePath + "/" + material.name + "_shaft.json")
+            targetFile.write(resource)
+        })
+
+    }
+    doFirst {
+        def targetFolder = file(resourceBuildDir + "/assets/gearcraft/models/block")
+        variants.forEach({ material ->
+            for (def i = 0; i < material.power; i++) {
+
+                def resource = "{\n" +
+                        "  \"parent\": \"gearcraft:block/shaft\",\n" +
+                        "  \"textures\": {\n" +
+                        "    \"particle\": \"minecraft:block/${material.main}\",\n" +
+                        "    \"body\": \"minecraft:block${material.main}\",\n" +
+                        "    \"casing\":\"minecraft:block/${material.secondary}\",\n" +
+                        "  }\n" +
+                        "}"
+
+                def targetFile = file("$targetFolder.absolutePath/${material.name}_shaft_${i}.json")
+                targetFile.write(resource)
+
+            }
+        })
+    }
+    doFirst {
+        def targetFolder = file(resourceBuildDir + "/assets/gearcraft/textures/block")
+        targetFolder.mkdirs()
+        def max = variants.collect({
+            it.power
+        }).max()
+
+        for (def i = 0; i < max; i++) {
+            def targetFile = file("$targetFolder.absolutePath/shaft_bit_${i}.mcmeta")
+            targetFile.write(
+                    '{ "animation" : { "frametime" : ' + i + ' , "frames" : [0, 1, 0] } }'
+            )
+            ant.copy( file:"generatedResources/excluded/shaft_bit.png",
+                    tofile:"$targetFolder/shaft_bit_${i}.png")
+        }
+        
+    }
+}
+
 task generateResources(type: Copy) {
     doFirst {
         delete(resourceBuildDir)
@@ -61,6 +176,8 @@ task generateResources(type: Copy) {
     }
 
     into resourceBuildDir
+
+    finalizedBy generateDynamicResources
 }
 
 jar.dependsOn generateResources

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y":  { "model": "gearcraft:block/@replace@_shaft" ,"uvlock":true},
+    "axis=z":  { "model": "gearcraft:block/@replace@_shaft", "x": 90 ,"uvlock":true},
+    "axis=x":  { "model": "gearcraft:block/@replace@_shaft", "x": 90, "y": 90 ,"uvlock":true}
+  }
+}

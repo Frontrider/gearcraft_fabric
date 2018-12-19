@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up":   { "model": "gearcraft:block/@replace@_sawmill","x":-90 },
+    "facing=down":     { "model": "gearcraft:block/@replace@_sawmill","x":90},
+    "facing=south":  { "model": "gearcraft:block/@replace@_sawmill","x":180},
+    "facing=north":  { "model": "gearcraft:block/@replace@_sawmill"},
+    "facing=west":   { "model": "gearcraft:block/@replace@_sawmill","y":-90},
+    "facing=east":   { "model": "gearcraft:block/@replace@_sawmill","y":90}
+  }
+}
